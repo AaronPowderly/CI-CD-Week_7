@@ -23,4 +23,16 @@ public class PersonService {
                 .orElseThrow(() -> new IllegalArgumentException("Person not found"));
     }
 
+    public Person update(String id, Person person)
+    {
+
+    }
+
+    public void delete(String id)
+    {
+        if (!repo.existsById(id)){
+            throw new IllegalArgumentException("Person not found");
+        }
+        repo.deleteById(id);
+    }
 }
